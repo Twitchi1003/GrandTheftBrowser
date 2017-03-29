@@ -1,34 +1,39 @@
 
 function createAttack () {
-  // console.log("Pressed");
-  //need array to track more than one bullet
-  var tempMousePos = createVector(mouseX,mouseY);
 
-  var bullet = {
-   Speed : tempMousePos.sub(playerPos),
+  var tempMousePos = createVector(mouseX - width/2,mouseY - height/2);
+  //halves to center on character
+
+
+  var bullet = {                          //my first manually constructed object, so proud :P
+   val : tempMousePos.setMag(10),
    Pos : createVector(playerPos.x,playerPos.y),
    lifeSpan : 100
   }
+
   bullets.push(bullet);
+
 }
 
  function updateBullets() {
 
    for (var i = bullets.length; i--;) {
-     console.log(bullets[i]);
-     //bullets[i]
-     bullets[i].Pos.add(bullets[i].Speed); //first travel
+     bullets[i].Pos.add(bullets[i].val);                    //move possision
+     fill(255,255,0);                                       //Drawing
+     ellipse(bullets[i].Pos.x,bullets[i].Pos.y,2,2);
 
-     bullets[i].lifeSpan -= 1;            //check for time
+     ageBullet();                                           //done after draw to avoid using dead object
 
-      // if (lifeSpan < 1) {
-      //           bullets.splice(i,1);
-      // }
-      //this does not kill teh bullet.. find out why
 
-     fill(255,255,0);
-     ellipse(bullets[i].Pos.x,bullets[i].Pos.y,30,30);
-     //draw not working.. why?!?!
+
+   }
+
+function ageBullet()  {
+      bullets[i].lifeSpan -= 1;            //age one
+
+      if (bullets[i].lifeSpan <= 1) {     //Detect old age
+                bullets.splice(i,1);      //Remove from array
+      }
    }
 
 }
