@@ -2,7 +2,7 @@ var bullets = [];
 
 
 function preload() {
-  bgImg = loadImage("assets/Road.png");     //need better picture
+  bgImg = loadImage(" GrandTheftBrowser/Assets/Road.png ");     //need better picture
 }
 
 
