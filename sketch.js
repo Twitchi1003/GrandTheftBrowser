@@ -1,4 +1,9 @@
 var bullets = [];
+var cars = [];
+var walking = true;
+var driving = false;
+var playerCar = null;
+
 
 
 function preload() {
@@ -8,31 +13,41 @@ function preload() {
 
 function setup() {
 
-  var width = window.innerWidth;
-  var height = window.innerHeight;
+  var width = 1280;//window.innerWidth;
+  var height = 720;//window.innerHeight;
 
-  createCanvas(width/1.7,height/1.7);
+  createCanvas(width,height);
 
-  playerPos = createVector(random(0,bgImg.width),random(0,bgImg.height));
+  playerPos = createVector(0,0);
   playerSpeed = createVector(0,0);
+
+  cars[0] = new Car(playerPos.x + 50, playerPos.y);
 
 
 }
 
 function draw() {
 
-  translate(-playerPos.x + width/2,-playerPos.y + height/2)
-  //this is voodoo that centers camera on playerPos
+  translate(width/2 ,height/2);
+  //center camera on center
 
-  image(bgImg,0,0, bgImg.width*8, bgImg.height*8);
-  fill(255,0,255,255);
-  ellipse(playerPos.x, playerPos.y, 10 , 10);
+  image(bgImg,-width-playerPos.x,-height-playerPos.y, bgImg.width*8, bgImg.height*8);
+  //draw background map
 
+  translate(-playerPos.x,-playerPos.y);
+
+  updatePlayerPos();
+
+  if (walking){
+    drawplayer();
+  }
 
   updateBullets();
-  //still a little beyiond me, need to pass vars across
 
-  playerPos.add(playerSpeed);
+  drawcars();
+
+
+
 
   // console.log(frameRate());
   //make zombie object, health/damage/poss, then spawning function
