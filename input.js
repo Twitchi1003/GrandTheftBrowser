@@ -12,7 +12,6 @@ function keyPressed() {
     }
     if (keyCode === 70) {
       getInOut();
-      console.log('f');
     }
   }
 

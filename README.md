@@ -1,4 +1,4 @@
 # GrandTheftBrowser
-Browser based oldstyleGTA clone 
+Browser based oldstyleGTA clone
 
-Just getting started.. Needs just about everything 
+Just getting started.. Needs just about everything

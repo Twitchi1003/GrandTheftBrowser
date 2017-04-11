@@ -27,11 +27,11 @@ function getInOut() {
         playerPos = cars[playerCar].pos;
         driving = true;
       }
-      else if (driving) {
+      else if (driving) { //get out
         driving = false;
         //work out new pos, (car center - half carWidth)
         walking = true;
-        console.log(out);
+        console.log('out');
       }
     }
 

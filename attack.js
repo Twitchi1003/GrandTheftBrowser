@@ -1,7 +1,7 @@
 
 function createAttack () {
 
-  var tempMousePos = createVector(mouseX - width/2,mouseY - height/2);
+  var tempMousePos = createVector(mouseX - canvWidth/2,mouseY - canvHeight/2);
   //halves to center on character
 
 
