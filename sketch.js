@@ -7,7 +7,7 @@ var playerCar = null;
 
 
 function preload() {
-  bgImg = loadImage("assets/Road.png");     //need better picture
+  bgImg = loadImage("https://twitchi1003.github.io/GrandTheftBrowser/Assets/Road.png");     //need better picture
 }
 
 
