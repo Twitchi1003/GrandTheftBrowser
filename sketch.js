@@ -3,8 +3,8 @@ var cars = [];
 var walking = true;
 var driving = false;
 var playerCar = null;
-var canvWidth = window.innerWidth/2;
-var canvHeight = window.innerHeight/2;
+var canvWidth = 600;//window.innerWidth;
+var canvHeight = 400;//window.innerHeight;
 
 
 
@@ -31,24 +31,23 @@ function setup() {
 
 function draw() {
 
-  image(bgImg,-playerPos.x,-playerPos.y, bgImg.width*6, bgImg.height*6);
-  //draw background map
-
-
   translate(canvWidth/2 , canvHeight/2);
   //center camera on center
 
-  updateBullets(); //attack.js
+  image(bgImg,-canvWidth-playerPos.x,-canvHeight-playerPos.y, bgImg.width*6, bgImg.height*6);
+  //draw background map
 
-  updatePlayerPos(); //player.js
+
+  updatePlayerPos();
 
   translate(-playerPos.x,-playerPos.y);
-
 
 
   if (walking){
     drawplayer();
   }
+
+  updateBullets();
 
   drawcars();
 
