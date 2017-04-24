@@ -9,7 +9,7 @@ var canvHeight = 400;//window.innerHeight;
 
 
 function preload() {
-  bgImg = loadImage("twitchi1003.github.io/GrandTheftBrowser//assets/Road.png");     //need better picture
+  bgImg = loadImage("twitchi1003.github.io/GrandTheftBrowser/assets/Road.png");     //need better picture
 }
 
 
