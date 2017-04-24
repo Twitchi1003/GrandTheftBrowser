@@ -41,5 +41,10 @@ function mousePressed() {
   if (mouseButton == LEFT) {
     createAttack();
   }
+  if (mouseButton == RIGHT) {
+  
+    console.log(cars[0]);
+    console.log(playerPos);
+  }
 
 }

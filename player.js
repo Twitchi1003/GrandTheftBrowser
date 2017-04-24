@@ -5,7 +5,7 @@ function updatePlayerPos () {
   }
 
   if (driving) {
-    playerPos = cars[playerCar].pos;
+    //playerPos = cars[playerCar].pos;
   }
 }
 
@@ -26,6 +26,7 @@ function getInOut() {
         playerCar = i;
         playerPos = cars[playerCar].pos;
         driving = true;
+        console.log('In ' + cars[playerCar].pos);
       }
       else if (driving) { //get out
         driving = false;

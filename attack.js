@@ -23,9 +23,6 @@ function createAttack () {
      ellipse(bullets[i].Pos.x,bullets[i].Pos.y,2,2);
 
      ageBullet();                                           //done after draw to avoid using dead object
-
-
-
    }
 
 function ageBullet()  {
